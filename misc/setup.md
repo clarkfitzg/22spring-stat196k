@@ -7,6 +7,17 @@ Setting up the Jupyter Server for class.
 3. Add students as users to JupyterHub.
 4. I can now access the server through HTTP from a public IP address.
 
+https://tljh.jupyter.org/en/latest/topic/idle-culler.html#configuring-the-idle-culler
+
+The idle culler default is 10 minutes, too short.
+24 hours is more like it.
+```
+
+sudo tljh-config set services.cull.timeout 86400
+sudo tljh-config set services.cull.every 3600
+sudo tljh-config reload
+
+```
 
 Notes:
 
